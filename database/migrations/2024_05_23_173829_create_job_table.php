@@ -24,8 +24,8 @@ class CreateJobTable extends Migration
             $table->integer('experience')->unsigned()->nullable();
             $table->string('qualification')->nullable();
             $table->string('salary_currency')->nullable();
-            $table->integer('salary_min')->unsigned();
-            $table->integer('salary_max')->unsigned();
+            $table->integer('salary_min')->unsigned()->nullable();
+            $table->integer('salary_max')->unsigned()->nullable();
             $table->string('salary_rate')->nullable();
             $table->boolean('hide_salary')->nullable();
             $table->text('description')->nullable();
