@@ -172,10 +172,10 @@ class JobController extends Controller
 
         $job = $jobBuilder->first();
 
-        Meta::setTitle($job->title . " | " . $job->company . " | SoftwareJob SG");
-        Meta::setDescription("Explore jobs at " . $job->company . " in Singapore. Looking for a job in Singapore for? Check out for hand-picked opportunities at top companies.");
+        // Meta::setTitle($job->title . " | " . $job->company . " | SoftwareJob SG");
+        // Meta::setDescription("Explore jobs at " . $job->company . " in Singapore. Looking for a job in Singapore for? Check out for hand-picked opportunities at top companies.");
 
-        return view('job.view', [ "job" => $job, "employmentType" => $employmentType ]);
+        return view('job.view', [ "job" => $job ]);
     }
 
     public function getJobById($id)

@@ -10,34 +10,32 @@
   "description" : "{{ $job->description }}",
   "identifier": {
     "@type": "PropertyValue",
-    "name": "{{ $job->company->name }}",
-    "value": "{{ $job->company->id }}"
+    "name": "{{ $job->company }}",
+    "value": "{{ $job->company }}"
   },
   "datePosted" : "{{ date('Y-m-d', strtotime($job->posted_at)) }}",
   "applicantLocationRequirements": {
     "@type": "Country",
-    "name": "Singapore"
+    "name": "USA"
   },
   "jobLocationType": "TELECOMMUTE",
   "hiringOrganization" : {
     "@type" : "Organization",
-    "name" : "{{ $job->company->name }}",
-    "sameAs" : "https://softwarejob.sg/company/{{ $job->company->id }}/{{ $job->company->name }}",
-    "logo" : "https://s3.ap-southeast-1.amazonaws.com/softwarejob.sg/company/logo/{{ $job->company->id }}/{{ $job->company->logo }}"
+    "name" : "{{ $job->company }}",
+    "sameAs" : "https://newyork-job.com"
   }
 }
 </script>
 
 <div class='container mx-auto justify-center p-8 max-w-6xl'>
   <div class="">
-    <img class="w-18 h-16 rounded mb-2" src="{{ env('AWS_S3_URL') }}/company/logo/{{ $job->company->id }}/{{ $job->company->logo }}" alt="{{ $job->company->name }}" />
 
     <div>
       <p class='text-3xl mb-1 text-sky-900 font-semibold'>{{ $job->title }}</p>
     </div>
 
     <div class='mb-2'>
-      <span class="text-base text-zinc-600 font-bold dark:text-gray-400">{{ $job->company->name }}</span>
+      <span class="text-base text-zinc-600 font-bold dark:text-gray-400">{{ $job->company }}</span>
     </div>
 
     <div class='mb-2'>
